@@ -1,0 +1,3 @@
+org.springframework.boot.diagnostics.FailureAnalyzer=\
+com.gl.failureanalyzerdemo.MyFailureAnalyzer,\
+com.gl.failureanalyzerdemo.MyFailureAnalyzer2

@@ -1,0 +1,7 @@
+spring:
+  banner:
+    location: classpath:banner123.txt
+#  main:
+#    banner-mode: OFF
+
+
