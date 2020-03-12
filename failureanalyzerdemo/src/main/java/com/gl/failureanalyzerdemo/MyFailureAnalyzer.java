@@ -1,14 +1,15 @@
 package com.gl.failureanalyzerdemo;
 
+import org.springframework.beans.factory.NoSuchBeanDefinitionException;
+import org.springframework.boot.diagnostics.AbstractFailureAnalyzer;
 import org.springframework.boot.diagnostics.FailureAnalysis;
-import org.springframework.boot.diagnostics.FailureAnalyzer;
 
 /**
  * @author - GreenLearner(https://www.youtube.com/c/greenlearner)
  */
-public class MyFailureAnalyzer implements FailureAnalyzer {
+public class MyFailureAnalyzer extends AbstractFailureAnalyzer<NoSuchBeanDefinitionException>{
     @Override
-    public FailureAnalysis analyze(Throwable failure) {
-        return new FailureAnalysis("My custom message", failure.getMessage(), failure);
+    protected FailureAnalysis analyze(Throwable rootFailure, NoSuchBeanDefinitionException cause) {
+        return new FailureAnalysis("no such bean found", "create the instance", rootFailure);
     }
 }
